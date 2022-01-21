@@ -250,9 +250,7 @@ func (pgd *pgDatastore) getNow(ctx context.Context) (time.Time, error) {
 		return time.Now(), err
 	}
 
-	// RelationTupleTransaction is not timezone aware
-	// Explicitly use UTC before using as a query arg
-	now = now.UTC()
+	now = now.Local()
 
 	return now, nil
 }

@@ -2,7 +2,7 @@ package migrations
 
 const createRelationTupleTransaction = `CREATE TABLE relation_tuple_transaction (
     id BIGSERIAL NOT NULL,
-    timestamp TIMESTAMP WITHOUT TIME ZONE DEFAULT now() NOT NULL,
+    timestamp TIMESTAMPTZ DEFAULT now() NOT NULL,
     CONSTRAINT pk_rttx PRIMARY KEY (id)
 );`
 
